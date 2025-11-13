@@ -1,0 +1,2 @@
+# smartbin
+Diplomarbeit Fronthaler, Glatz
