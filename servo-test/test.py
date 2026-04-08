@@ -9,4 +9,4 @@ while True:
     for servo in servos:
         for pos in positions:
             getattr(servo, pos)()  
-            sleep(1)
+            sleep(2)

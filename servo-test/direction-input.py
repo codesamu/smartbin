@@ -7,8 +7,8 @@ servos = {
 }
 
 directions = {
-    "lf": {"horizontal": "min", "vertical": "min"},
-    "rf": {"horizontal": "max", "vertical": "min"},
+    "rf": {"horizontal": "min", "vertical": "min"},
+    "lf": {"horizontal": "max", "vertical": "min"},
     "lb": {"horizontal": "min", "vertical": "max"},
     "rb": {"horizontal": "max", "vertical": "max"},
 }
@@ -23,5 +23,10 @@ while True:
     if usr_inp in directions:
         for servo_name, position in directions[usr_inp].items():
             getattr(servos[servo_name], position)()  # calls servo.min() / max() auf
+
+            print("sleeping call")
+            sleep(1.5)
+        
+        print("sleep for trash to fall down")
     else:
         print("Falsche Eingabe, l/r & f/b eingeben.")
