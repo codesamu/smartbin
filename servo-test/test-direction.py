@@ -18,9 +18,16 @@ while True:
         print(f"Bewege Servos nach: {dir_name}")
         for servo_name, position in positions.items():
             getattr(servos[servo_name], position)()  # servo.min() or servo.max()
-        sleep(1)  
+            sleep(2)
+        print('going initial position')
+        for servo in servos.values():
+            servo.mid()
+            print('centering between')
+            sleep(1)
+        sleep(3)  
 
     # go to inital middle position between positions
     for servo in servos.values():
         servo.mid()
-    sleep(0.5)
+    print('waiting for centering')
+    sleep(1.5)
